@@ -402,7 +402,9 @@ class BrowserLinker(linker.BaseLinker):
             raise RuntimeError("Can't inject bootstrap loader. " + \
                                "No tag %(tag)s found in %(file)s" % \
                                { 'tag': body_end, 'file': file_name })
-        base_html = base_html.replace(body_end,
+        if base_html.find(iframe_tag) == -1:
+            # if script and iframe aren't there, inject them
+            base_html = base_html.replace(body_end,
                                       script_tag +'\n'+ iframe_tag +'\n'+ body_end)
 
         fh = open(html_output_filename, 'w')
