@@ -21,7 +21,7 @@ if __name__ == '__main__':
     """
 
     setup(name = "Pyjamas Desktop",
-        version = "0.8.1",
+        version = "0.9",
         description = "Pyjamas Widget API for Web applications, in Python",
         long_description = open('README.rst', 'rt').read(),
         url = "http://pyjs.org",

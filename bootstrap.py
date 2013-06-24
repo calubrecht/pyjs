@@ -3,7 +3,7 @@
 """ simple creation of three commands, customised for your specific system.
     windows users get a corresponding batch file.  yippeeyaiyay.
 """
-version = '0.8.1~+alpha1'
+version = '0.9'
 
 import os
 import sys
