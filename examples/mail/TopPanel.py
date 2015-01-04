@@ -6,7 +6,7 @@ from pyjamas.ui.VerticalPanel import VerticalPanel
 from pyjamas.ui.Widget import Widget
 from pyjamas.ui import HasAlignment
 from AboutDialog import AboutDialog
-from Logger import Logger
+from MailLogger import Logger
 
 class TopPanel(Composite):
 

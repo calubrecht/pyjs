@@ -9,7 +9,7 @@ from MailDetail import MailDetail
 from Shortcuts import Shortcuts
 from MailList import MailList
 from TopPanel import TopPanel
-from Logger import Logger
+from MailLogger import Logger
 
 class Mail:
 

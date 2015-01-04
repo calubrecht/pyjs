@@ -19,8 +19,8 @@ See README.
 """)
 
 from puremvc.patterns.facade import Facade
-from ApplicationConstants import Command
-import controller, components
+from libemployeeadmin.ApplicationConstants import Command
+from libemployeeadmin import controller, components
 
 class AppFacade(Facade):
 

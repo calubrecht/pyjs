@@ -1,5 +1,9 @@
+.. image:: https://travis-ci.org/pyjs/pyjs.png
+    :target: https://travis-ci.org/pyjs/pyjs
+    :alt: Build Status
+
 Pyjs
-=======
+====
 
 Pyjs is a port of Google Web Toolkit to Python, and thus enables
 the development of Rich Media AJAX applications in Python, with no
@@ -12,26 +16,27 @@ python, with three useable Desktop ports available.  With web-engine
 technology at it's core, HTML, CSS, plugins and other related features
 work out-of-the-box.
 
-For more information and documentation, see:
 
-* http://pyjs.org
-* https://github.com/pyjs/pyjs/wiki
+Pyjs-Compiler
+=============
 
-For issue tracking:
+Pyjs-Compiler tools are a collection of tools that related to
+  * compiling python code to javascript
+  * linking compiled javascript modules into complete application
+  * to convert java to python, etc.
 
-* https://github.com/pyjs/pyjs/issues
+Pyjs-Compiler runs your python application in a Web Browser (as javascript).
 
-Mailing list:
 
-* https://groups.google.com/group/pyjs-users
+Pyjs-Widgets
+============
 
-IRC:
+Pyjs-Widgets are a collection of GUI widget libraris that can be run natively
+as part of Pyjs-Native or compiled by Pyjs-Compiler to run in a browser.
 
-:Server: irc.freenode.net
-:Channel: #pyjs
 
 Pyjs-Desktop
-===============
+============
 
 Pyjs runs your python application in a Web Browser (as javascript).
 Pyjs-Desktop runs exactly the same python application on the
@@ -55,38 +60,24 @@ and above come with a json library installed by default.
    known to be suitable, as is version 9.0.  Versions 10 and above are
    known to segfault.
 
-2. PyWebKitGtk
+2. GIWebKit (GObject Introspection)
 
-   The version of pywebkitgtk at http://www.gnu.org/software/pythonwebkit
-   provides full and direct python-equivalent interoperability for all functions
-   for which access through javascript has been provided: thus, Pyjs
-   Desktop will function correctly.
+   A 95% functional binding enabled via the dynamic GObject/Python bindings
+   produced by https://wiki.gnome.org/GObjectIntrospection after scanning the
+   annotated WebKit sources. This backend is missing a critical piece,
+   window.addEventListener, from https://bugs.webkit.org/show_bug.cgi?id=77835
+   but development is in progress to implement the missing binding via ctypes
+   instead, due to a lack of interest by WebKit.
 
-   PyWebkitGtk must be explicitly enabled.  create a $HOME/.pyjd/pyjdrc file
+   This is intended to supercede XULRunner as the default on Linux once ready.
+
+   GIWebKit must be explicitly enabled.  create a $HOME/.pyjd/pyjdrc file
    containing the following two lines:
 
    [gui]
-   engine=pywebkitgtk
+   engine=giwebkit
 
-3. PyWebkitDFB
-
-   This is an experimental but minimally functional engine that is extremely
-   quick to start up.  The build dependencies are also drastically smaller than
-   any of the other web browser engines (which indirectly contributes to the
-   fast startup time).
-
-   HTML5 is fully supported, with the exception of Video and Canvas; also
-   missing at present is support for Frames.  Despite the present limitations,
-   PyWebkitDFB is highly suited to embedded systems, as well as being useable
-   as an excellent and ultra-quick general-purpose web browser engine.
-
-   PyWebkitDFB must be explicitly enabled.  create a $HOME/.pyjd/pyjdrc file
-   containing the following two lines:
-
-   [gui]
-   engine=pywebkitdfb
-
-4. MSHTML
+3. MSHTML
 
    For Windows users, all that's required, other than installing python
    and Internet Explorer, is one further tiny package: Win32 "comtypes".
@@ -98,3 +89,28 @@ and above come with a json library installed by default.
    of anything up to 30mb in size, the MSHTML port literally requires
    nothing more than comtypes, thanks to the far-sighted design of the
    MSHTML Trident Engine and its extensive COM interface.
+
+
+Installation
+===============
+
+Access our "Getting Started" wiki (https://github.com/pyjs/pyjs/wiki/GettingStarted) for get information about installation, examples, troubleshooting, etc.
+
+For more information and documentation, see:
+
+* http://pyjs.org
+* https://github.com/pyjs/pyjs/wiki
+
+For issue tracking:
+
+* https://github.com/pyjs/pyjs/issues
+
+Mailing list:
+
+* https://groups.google.com/group/pyjs-users
+
+IRC:
+
+:Server: irc.freenode.net
+:Channel: #pyjs
+

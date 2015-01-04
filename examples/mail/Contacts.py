@@ -6,7 +6,7 @@ from pyjamas.ui.PopupPanel import PopupPanel
 from pyjamas.ui.VerticalPanel import VerticalPanel
 from pyjamas.ui.Widget import Widget
 from pyjamas.ui.Label import Label
-from Logger import Logger
+from MailLogger import Logger
 
 class Contact:
     def __init__(self, name, email):

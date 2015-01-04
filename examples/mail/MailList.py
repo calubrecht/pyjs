@@ -6,7 +6,7 @@ from pyjamas.ui.Widget import Widget
 from pyjamas.ui.Label import Label
 from pyjamas.ui import HasAlignment
 from MailItems import MailItems
-from Logger import Logger
+from MailLogger import Logger
 
 class MailList(Composite):
 

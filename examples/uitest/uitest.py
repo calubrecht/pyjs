@@ -4,14 +4,14 @@ from pyjamas.Timer import Timer
 
 from __pyjamas__ import doc
 
-from UnitTest import IN_BROWSER, IN_JS
+from libuitest.UnitTest import IN_BROWSER, IN_JS
 
-from DockPanelTest import DockPanelTest
-from LabelTest import LabelTest
-from DOMTest import DOMTest
-from EventTest import EventTest
+from libuitest.DockPanelTest import DockPanelTest
+from libuitest.LabelTest import LabelTest
+from libuitest.DOMTest import DOMTest
+from libuitest.EventTest import EventTest
 
-import write
+from libuitest import write
 import sys
 
 class RunTests:

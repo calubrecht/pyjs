@@ -12,9 +12,9 @@ See README.
 
 from pyjamas.Timer import Timer
 
-from ApplicationConstants import Notification
-from controller.StartupCommand import StartupCommand
-from view.components.AppFrame import AppFrame
+from libtimesheet.ApplicationConstants import Notification
+from libtimesheet.controller.StartupCommand import StartupCommand
+from libtimesheet.view.components.AppFrame import AppFrame
 
 class AppFacade(Facade):
 

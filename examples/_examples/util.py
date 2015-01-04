@@ -167,25 +167,16 @@ def _process_pyjamas(root):
     lim = 3
     while lim > 0:
         root = os.path.join(root, '..')
-        boot = os.path.join(root, 'bootstrap.py')
-        if os.path.isfile(boot):
-            root = os.path.abspath(root)
-            boot = os.path.abspath(boot)
-            if sys.platform == 'win32':
-                pyjsbuild = os.path.join(root, 'bin', 'pyjsbuild.py')
-            else:
-                pyjsbuild = os.path.join(root, 'bin', 'pyjsbuild')
+        translator = os.path.join(root, 'pyjs', 'translator.py')
+        if os.path.isfile(translator):
             break
         lim = lim - 1
     if lim == 0:
         raise RuntimeError('Unable to locate pyjamas root.')
+    pyjsbuild=os.path.join(os.path.dirname(sys.executable), 'pyjsbuild')
     # Bootstrap on test failure; attempts to fix a couple issues at once
     null = open(os.devnull, 'wb')
-    try:
-        if subprocess.call(['python', pyjsbuild], cwd=root, stdout=null, stderr=subprocess.STDOUT) > 0:
-            raise OSError
-    except OSError:
-        subprocess.call(['python', boot], cwd=root, stdout=null, stderr=subprocess.STDOUT)
+    subprocess.call([pyjsbuild], cwd=root, stdout=null, stderr=subprocess.STDOUT)
     return {
         'DIR_PYJAMAS': root,
         'BASE_EXAMPLES': os.path.join(root, 'examples'),

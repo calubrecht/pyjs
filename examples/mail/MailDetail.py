@@ -3,7 +3,7 @@ from pyjamas.ui.DockPanel import DockPanel
 from pyjamas.ui.HTML import HTML
 from pyjamas.ui.ScrollPanel import ScrollPanel
 from pyjamas.ui.VerticalPanel import VerticalPanel
-from Logger import Logger
+from MailLogger import Logger
 
 class MailDetail(Composite):
     def __init__(self):

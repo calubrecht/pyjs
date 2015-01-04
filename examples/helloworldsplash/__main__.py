@@ -3,7 +3,7 @@
 
 
 TARGETS = {
-    'Hello.py': {'options': [
+    'Hello2.py': {'options': [
         '--multi-file',
         '--bootstrap-file=bootstrap_progress.js',
         '--print-statements',
