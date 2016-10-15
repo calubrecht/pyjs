@@ -22,3 +22,7 @@ __output__
 /.project
 /.pydevproject
 /.settings
+
+dist
+pyjs.egg-info
+
